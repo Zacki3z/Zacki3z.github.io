@@ -15,6 +15,26 @@
         </style>
 </head>
     <body>
+	    <audio id="bg-music" loop>
+  		<source src="Lover.mp3" type="audio/mp3">
+  		Your browser does not support the audio element.
+            </audio>
+	    <button id="play-button" style="position:absolute; top:10px; left:10px; z-index:999;">Play Music</button>
+<script>
+  const music = document.getElementById("bg-music");
+  const playButton = document.getElementById("play-button");
+
+  playButton.addEventListener("click", () => {
+    music.play().then(() => {
+      playButton.style.display = "none";
+    }).catch(err => {
+      console.log("Autoplay failed:", err);
+    });
+  });
+</script>
+
+
+	    
         <div id="main">
             <div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。</div>
                 <audio autoplay="autoplay" height="100" width="100"> 
